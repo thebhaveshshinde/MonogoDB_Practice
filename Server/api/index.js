@@ -20,7 +20,11 @@ const userSchema = new mongoose.Schema({
 const User = new mongoose.model('User' , userSchema);
 
 App.use(express.json())
-App.use(cors({origin:"http://localhost:5173"}))
+
+App.use(cors({
+    origin :"http://localhost:5173",
+    method : ['GET' , 'POST' , 'PUT' , 'DELETE']
+}))
  
 
 App.post("/api/index" , async (req , res ) => {
