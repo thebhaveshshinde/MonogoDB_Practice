@@ -11,7 +11,7 @@ function Registration() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api", {
+      const response = await fetch("https://monogo-db-practice-back.vercel.app/api", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
