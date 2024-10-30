@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const bcrypt = require("bcrypt")
 
 const App = express()
 
@@ -35,7 +36,8 @@ App.post("/api" , async (req , res ) => {
     
 
     try{
-        const user = new User({username , password , age})
+        const HashedPassword = bcrypt.hash(password , 10)
+        const user = new User({username , password:HashedPassword , age})
         await user.save();
 
         res.status(200).json({message:"Registration Successfully ... "})
