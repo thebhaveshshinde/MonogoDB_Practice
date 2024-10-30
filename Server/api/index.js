@@ -22,13 +22,17 @@ const User = new mongoose.model('User' , userSchema);
 App.use(express.json())
 
 App.use(cors({
-    origin :"http://localhost:5173",
+    origin :"*",
     method : ['GET' , 'POST' , 'PUT' , 'DELETE']
 }))
  
+App.get("/" , async(req , res ) => {
+    res.status(200).send("<html><head><title></title></head><body><h1>Welcome Everyone!</body></html>")
+})
 
-App.post("/api/index" , async (req , res ) => {
+App.post("/api" , async (req , res ) => {
     const { username , password , age } = req.body ; 
+    
 
     try{
         const user = new User({username , password , age})
