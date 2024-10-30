@@ -44,7 +44,8 @@ App.post("/api" , async (req , res ) => {
     }
 })
 
+module.exports = App; 
 
-App.listen(5000, () => {
-    console.log("Server Running on the port 5000 ...")
-})
+// App.listen(5000, () => {
+//     console.log("Server Running on the port 5000 ...")
+// })
