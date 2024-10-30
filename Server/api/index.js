@@ -23,7 +23,7 @@ const User = new mongoose.model('User' , userSchema);
 App.use(express.json())
 
 App.use(cors({
-    origin :"*",
+    origin :"https://monogo-db-practice.vercel.app",
     method : ['GET' , 'POST' , 'PUT' , 'DELETE']
 }))
  
