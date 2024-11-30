@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI ,{
 const userSchema = new mongoose.Schema({
     username : {type : String , required : true},
     password : {type : String , required : true},
-    mobile : {type : Number , required : true } ,
+    // mobile : {type : Number , required : true } ,
     age :{type : Number , required : true}
 })
 
@@ -33,11 +33,11 @@ App.get("/" , async(req , res ) => {
 })
 
 App.post("/api" , async (req , res ) => {
-    const { username , password , mobile ,  age } = req.body ; 
+    const { username , password  ,  age } = req.body ; 
     
 
     try{
-        const user = new User({username , password , mobile , age})
+        const user = new User({username , password , age})
         await user.save();
 
         res.status(200).json({message:"Registration Successfully ... "})
