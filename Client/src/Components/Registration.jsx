@@ -37,7 +37,7 @@ function Registration() {
         Password: <input type="text" name="password" value={formdata.password} onChange={handleChange} required /><br />
         Mobile No.:<input type="number" name="mobile" value={formdata.mobile} onChange={handleChange} required /><br />
         Age :<input type="number" name="age" value={formdata.age} onChange={handleChange} required /><br />
-        <button type="submit">Register User</button>
+        <button type="submit">Register</button>
       </form>
     </>
   )
